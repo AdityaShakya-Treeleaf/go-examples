@@ -160,3 +160,14 @@ func TestBinaryPrefixDivByFive(t *testing.T) {
 		}
 	}
 }
+
+func TestMaxSubArrayLenDivK(t *testing.T) {
+	nums := []int{1, 2, 1, 2}
+	k := 1
+	msaldk := dsa.MaxSubArrayLenDivK{}
+	expected := int64(3)
+	actual := msaldk.MaxSubarraySum(nums, k)
+	if expected != actual {
+		t.Fatalf("Failed: Actual: %d", actual)
+	}
+}

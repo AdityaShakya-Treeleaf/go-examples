@@ -9,6 +9,8 @@ import (
 	"net/http"
 	"sync"
 	"testing"
+
+	"github.com/AdityaShakya-Treeleaf/go-examples/internal/dsa"
 )
 
 func TestMaximumEnergyFromDungeon(t *testing.T) {
@@ -244,4 +246,14 @@ func TestConcurrentRequests(t *testing.T) {
 	// Wait for all requests to complete
 	wg.Wait()
 	t.Log("All concurrent requests completed")
+}
+
+func TestWaysDivideLongCorridor(t *testing.T) {
+	wdlc := dsa.WaysDivideLongCoriddor{}
+	input := "SSPPSPSPP"
+	expected := 3
+	actual := wdlc.NumberOfWays(input)
+	if actual != expected {
+		t.Fatalf("Failed. Expected: %d, Got: %d", expected, actual)
+	}
 }
