@@ -257,3 +257,13 @@ func TestWaysDivideLongCorridor(t *testing.T) {
 		t.Fatalf("Failed. Expected: %d, Got: %d", expected, actual)
 	}
 }
+
+func TestSmoothDescentPeriods(t *testing.T) {
+	sdp := dsa.SmoothDescentPeriods{}
+	input := []int{8, 6, 7, 7}
+	expected := int64(4)
+	actual := sdp.GetDescentPeriods(input)
+	if actual != expected {
+		t.Fatalf("Failed. Expected: %d, Got: %d", expected, actual)
+	}
+}
